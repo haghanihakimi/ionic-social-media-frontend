@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonPage, IonContent, IonRippleEffect, IonImg, IonNavLink, IonRouterLink } from '@ionic/react';
+import { IonPage, IonContent, IonRippleEffect, IonImg, IonRouterLink } from '@ionic/react';
 import {
     HiEnvelope as MailIcon, HiLockClosed as PasswordIcon,
     HiEye as EyeOpenIcon, HiEyeSlash as EyeCloseIcon,
@@ -40,6 +40,7 @@ const Login: React.FC = () => {
                                     email: e.target.value,
                                 }))
                             }}
+                            defaultValue={inputs.email}
                             className="min-h-[38px] block pl-8 pr-2 w-full text-base font-medium tracking-wide text-slate-800 bg-slate-200 rounded border border-slate-300 appearance-none ring-8 ring-transparent transition duration-200 focus:bg-slate-100 focus:ring-2 focus:border-slate-100 focus:ring-blue-500 focus:outline-none peer disabled:opacity-50"
                             placeholder=" " />
                         <label htmlFor="email_address"
@@ -58,6 +59,7 @@ const Login: React.FC = () => {
                                     password: e.target.value,
                                 }))
                             }}
+                            defaultValue={inputs.password}
                             className="min-h-[38px] block px-8 w-full text-base font-medium tracking-wide text-slate-800 bg-slate-200 rounded border border-slate-300 appearance-none ring-8 ring-transparent transition duration-200 focus:bg-slate-100 focus:ring-2 focus:border-slate-100 focus:ring-blue-500 focus:outline-none peer disabled:opacity-50"
                             placeholder=" " />
                         <label htmlFor="password"
@@ -77,11 +79,11 @@ const Login: React.FC = () => {
                     {/* login button and link */}
                     <div className='w-full relative -translate-y-5 flex flex-col gap-4'>
                         <div className='w-full flex flex-row items-center justify-between gap-2 px-2'>
-                            <IonNavLink routerDirection="forward" component={() => ''}>
+                            <IonRouterLink routerDirection="forward" href='/user/profile'>
                                 <span className='text-sm font-medium text-blue-500'>
                                     Forgot Password
                                 </span>
-                            </IonNavLink>
+                            </IonRouterLink>
                             <span className='text-sm text-slate-300'>
                                 |
                             </span>

@@ -14,7 +14,7 @@ export const activeSheetSlice = createSlice({
   initialState,
   reducers: {
     toggleFollowingAtiveSheet: (state, action: PayloadAction<boolean>) => {
-        state.followingActiveSheet = action.payload
+      // 
     },
   },
 })

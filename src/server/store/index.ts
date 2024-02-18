@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
 import profileSlice from './reducers/profile';
 import modalSlice from './reducers/modals';
-import activeSheets from './reducers/active-sheets';
+import activeSheetSlice from './reducers/active-sheets';
+import alertSlice from './reducers/alerts';
 
 export const store = configureStore({
   reducer: {
     profile: profileSlice,
     modals: modalSlice,
-    activeSheets: activeSheets,
+    activeSheets: activeSheetSlice,
+    alerts: alertSlice,
   }
 })
 

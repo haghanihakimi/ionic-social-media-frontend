@@ -1,18 +1,20 @@
-import React, { useRef, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { IonPage, IonContent, IonRippleEffect, IonHeader, IonToolbar } from '@ionic/react';
 import {
-    HiMiniChevronLeft as LeftIcon, HiMiniChevronDown as BottomIcon,
+    HiMiniChevronDown as BottomIcon, HiMiniChevronLeft as LeftIcon,
     HiMiniEllipsisVertical as MenuIcon,
 } from "react-icons/hi2";
 import { useHistory } from "react-router-dom";
 import './UserProfile.css';
-import { RootState } from '../../server/store';
-import FollowingModal from '../../partials/modals/followingModal/followingModals';
+import IgnoreOptionsModal from '../../partials/modals/IgnoreOptionsModal/IgnoreOptionsModal';
 import UserProfileModal from '../../partials/modals/UserProfileModal/UserProfileModal';
-import FollowingActiveSheet from '../../partials/active-sheets/FollowingActiveSheet/FollowingActiveSheet';
-import { toggleFollowingAtiveSheet } from '../../server/store/reducers/active-sheets';
-import { toggleUserProfileModal } from '../../server/store/reducers/modals';
+import FollowingOptionsModal from '../../partials/modals/FollowingOptionsModal/FollowingOptionsModal';
+import BlockAlert from '../../partials/alerts/block-alert/block-alert';
+import AboutAccount from '../../partials/alerts/about-account/about-account';
+import RestrictOptionsModal from '../../partials/modals/RestrictOptionsModal/RestrictOptionsModal';
+import GuestProfilePostsIndex from '../../components/guest-profile-posts';
+import { toggleFollowingOptionsModal, toggleUserProfileModal } from '../../server/store/reducers/modals';
 
 const UserProfile: React.FC = () => {
     const history = useHistory();
@@ -56,7 +58,7 @@ const UserProfile: React.FC = () => {
                     </h2>
                 </div>
 
-                {/* profile other info */}
+                {/* profile follower info */}
                 <div className='w-full flex flex-row gap-4 relative px-8 justify-center items-center mt-2'>
                     <h4 className='inline-flex w-fit p-2 font-bold text-slate-900 flex-col justify-center text-center'>
                         48
@@ -87,15 +89,26 @@ const UserProfile: React.FC = () => {
 
                 {/* following button */}
                 <div className='w-full px-8 mt-2 relative'>
-                    <button type='button' onClick={() => dispatch(toggleFollowingAtiveSheet(true))}
-                        className='w-full p-2 bg-blue-600 text-sm font-medium rounded-lg text-slate-100 flex flex-row items-center justify-center gap-1'>
+                    <button type='button' onClick={() => dispatch(toggleFollowingOptionsModal(true))}
+                        className='w-full ion-activatable ripple-parent p-2 bg-blue-600 text-sm font-medium rounded-lg text-slate-100 flex flex-row items-center justify-center gap-1'>
                         Following
                         <BottomIcon className='w-4 h-4 text-slate-100 font-medium' />
+                        <IonRippleEffect></IonRippleEffect>
                     </button>
-                    <FollowingActiveSheet />
                 </div>
-                <FollowingModal />
+
+                {/* post categories can be image + text and videos */}
+                <GuestProfilePostsIndex />
+
+
+
+                {/* modals and external popups */}
+                <FollowingOptionsModal />
+                <IgnoreOptionsModal />
                 <UserProfileModal />
+                <BlockAlert />
+                <AboutAccount />
+                <RestrictOptionsModal />
             </IonContent>
         </IonPage>
     );
