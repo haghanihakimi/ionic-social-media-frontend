@@ -1,0 +1,7 @@
+#login-container ion-content {
+    --background: #f1f5f9;
+}
+#login-container ion-header, ion-toolbar {
+    --background: transparent;
+    --box-shadow: none;
+}

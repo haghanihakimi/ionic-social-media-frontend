@@ -1,0 +1,7 @@
+#signup-container ion-content {
+    --background: #f1f5f9;
+}
+#signup-container ion-header, ion-toolbar {
+    --background: transparent;
+    --box-shadow: none;
+}
