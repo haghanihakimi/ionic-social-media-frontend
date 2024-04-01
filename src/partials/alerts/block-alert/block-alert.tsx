@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useClickOutside } from '@reactuses/core';
 import './block-alert.css';
 import { RootState } from '../../../server/store';
 import {
@@ -14,28 +15,17 @@ import { IonRippleEffect } from '@ionic/react';
 const BlockAlert: React.FC = () => {
     const alerts = useSelector((state: RootState) => state.alerts);
     const dispatch = useDispatch();
-    const alertWrapper = useRef<HTMLDivElement>(null)
+    const alertWrapper = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        function hideMenu(event: MouseEvent | TouchEvent) {
-            if (alertWrapper.current && event.target instanceof Node && !alertWrapper.current.contains(event.target)) {
-                dispatch(toggleBlockAlert(false));
-            }
-        }
-
-        document.addEventListener('click', hideMenu, true);
-        document.addEventListener('contextmenu', hideMenu, true);
-        return () => {
-            document.removeEventListener('click', hideMenu, true);
-            document.removeEventListener('contextmenu', hideMenu, true);
-        };
-    })
+    useClickOutside(alertWrapper, () => {
+        dispatch(toggleBlockAlert(false));
+    });
 
     return (
         <>
             {
                 alerts.blockAlert ?
-                    <div className='w-screen animate-opacityFade h-screen p-4 fixed top-0 z-50 flex justify-center items-center bg-black bg-opacity-50'>
+                    <div className='w-screen animate-opacityFade h-screen p-4 fixed top-0 z-[99999989999] flex justify-center items-center bg-black bg-opacity-50'>
                         <div ref={alertWrapper} className='w-full animate-alertFade h-auto bg-slate-50 p-6 relative rounded-lg border border-slate-200 shadow-lg'>
                             {/* header */}
                             <h2 className='font-bold text-slate-900 text-center text-lg'>
@@ -67,11 +57,11 @@ const BlockAlert: React.FC = () => {
                             {/* buttons */}
                             <div className='w-full flex flex-row items-center justify-between gap-1'>
                                 <button onClick={() => dispatch(toggleBlockAlert(false))}
-                                    className='w-full ion-activatable ripple-parent rounded outline-none bg-transparent text-blue-600 text-base text-sm font-medium py-2'>
+                                    className='w-full ion-activatable ripple-parent rounded outline-none text-primary text-base text-sm font-medium py-2'>
                                     Cancel
                                     <IonRippleEffect></IonRippleEffect>
                                 </button>
-                                <button className='w-full ion-activatable ripple-parent rounded outline-none bg-blue-500 bg-red-400 text-slate-100 text-sm py-2 font-medium'>
+                                <button className='w-full ion-activatable ripple-parent rounded outline-none bg-transparent text-red-600 text-sm py-2 font-medium'>
                                     Block
                                     <IonRippleEffect></IonRippleEffect>
                                 </button>

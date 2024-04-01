@@ -3,6 +3,7 @@ import profileSlice from './reducers/profile';
 import modalSlice from './reducers/modals';
 import activeSheetSlice from './reducers/active-sheets';
 import alertSlice from './reducers/alerts';
+import routeSlice from './reducers/route';
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     modals: modalSlice,
     activeSheets: activeSheetSlice,
     alerts: alertSlice,
+    routes: routeSlice,
   }
 })
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonPage, IonContent, IonRippleEffect, IonImg, IonNavLink, IonRouterLink } from '@ionic/react';
+import { IonPage, IonContent, IonRippleEffect, IonImg, IonNavLink, IonRouterLink, IonButton } from '@ionic/react';
 import {
   HiEnvelope as MailIcon, HiLockClosed as PasswordIcon,
   HiEye as EyeOpenIcon, HiEyeSlash as EyeCloseIcon,
@@ -9,7 +9,6 @@ import './Signup.css';
 import { RegisterForm } from '../../server/types/register-form-types';
 
 const Signup: React.FC = () => {
-  const [showPassword, setShowPassword] = useState<boolean>(false);
   const [inputs, setInputs] = useState<RegisterForm>({
     firstname: '',
     lastname: '',
@@ -25,7 +24,7 @@ const Signup: React.FC = () => {
         {/* login banner */}
         <div className='w-full flex flex-col justify-center pt-6 px-8'>
           <IonImg
-            src='assets/at-hash.png'
+            src='assets/at-hash-grad.png'
             className='drop-shadow-lg h-20'
           ></IonImg>
           <h1 className='text-2xl font-bold text-center py-8 text-slate-700'>
@@ -44,10 +43,10 @@ const Signup: React.FC = () => {
                   firstname: e.target.value,
                 }))
               }}
-              className="min-h-[38px] block px-2 w-full text-base font-medium tracking-wide text-slate-800 bg-slate-200 rounded border border-slate-300 appearance-none ring-8 ring-transparent transition duration-200 focus:bg-slate-100 focus:ring-2 focus:border-slate-100 focus:ring-blue-500 focus:outline-none peer disabled:opacity-50"
+              className="min-h-[38px] block px-2 w-full text-base font-medium tracking-wide text-slate-800 bg-slate-200 rounded border border-slate-300 appearance-none ring-8 ring-transparent transition duration-200 focus:bg-slate-100 focus:ring-2 focus:border-slate-100 focus:ring--primary focus:outline-none peer disabled:opacity-50"
               placeholder=" " />
             <label htmlFor="firstname"
-              className="absolute select-none cursor-text text-sm text-slate-600 duration-200 transform -translate-y-8 scale-75 top-2 z-10 origin-[0] bg-transparent px-2 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-8 peer-focus:bg-transparent rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+              className="absolute select-none cursor-text text-sm text-slate-600 duration-200 transform -translate-y-8 scale-75 top-2 z-10 origin-[0] bg-transparent px-2 peer-focus:text--primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-8 peer-focus:bg-transparent rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
               First Name
             </label>
           </div>
@@ -61,10 +60,10 @@ const Signup: React.FC = () => {
                   lastname: e.target.value,
                 }))
               }}
-              className="min-h-[38px] block px-2 w-full text-base font-medium tracking-wide text-slate-800 bg-slate-200 rounded border border-slate-300 appearance-none ring-8 ring-transparent transition duration-200 focus:bg-slate-100 focus:ring-2 focus:border-slate-100 focus:ring-blue-500 focus:outline-none peer disabled:opacity-50"
+              className="min-h-[38px] block px-2 w-full text-base font-medium tracking-wide text-slate-800 bg-slate-200 rounded border border-slate-300 appearance-none ring-8 ring-transparent transition duration-200 focus:bg-slate-100 focus:ring-2 focus:border-slate-100 focus:ring--primary focus:outline-none peer disabled:opacity-50"
               placeholder=" " />
             <label htmlFor="lastname"
-              className="absolute select-none cursor-text text-sm text-slate-600 duration-200 transform -translate-y-8 scale-75 top-2 z-10 origin-[0] bg-transparent px-2 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-8 peer-focus:bg-transparent rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+              className="absolute select-none cursor-text text-sm text-slate-600 duration-200 transform -translate-y-8 scale-75 top-2 z-10 origin-[0] bg-transparent px-2 peer-focus:text--primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-8 peer-focus:bg-transparent rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
               Last Name
             </label>
           </div>
@@ -78,10 +77,10 @@ const Signup: React.FC = () => {
                   email: e.target.value,
                 }))
               }}
-              className="min-h-[38px] block px-2 w-full text-base font-medium tracking-wide text-slate-800 bg-slate-200 rounded border border-slate-300 appearance-none ring-8 ring-transparent transition duration-200 focus:bg-slate-100 focus:ring-2 focus:border-slate-100 focus:ring-blue-500 focus:outline-none peer disabled:opacity-50"
+              className="min-h-[38px] block px-2 w-full text-base font-medium tracking-wide text-slate-800 bg-slate-200 rounded border border-slate-300 appearance-none ring-8 ring-transparent transition duration-200 focus:bg-slate-100 focus:ring-2 focus:border-slate-100 focus:ring--primary focus:outline-none peer disabled:opacity-50"
               placeholder=" " />
             <label htmlFor="email_address"
-              className="absolute select-none cursor-text text-sm text-slate-600 duration-200 transform -translate-y-8 scale-75 top-2 z-10 origin-[0] bg-transparent px-2 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-8 peer-focus:bg-transparent rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+              className="absolute select-none cursor-text text-sm text-slate-600 duration-200 transform -translate-y-8 scale-75 top-2 z-10 origin-[0] bg-transparent px-2 peer-focus:text--primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-8 peer-focus:bg-transparent rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
               Email Address
             </label>
           </div>
@@ -95,10 +94,10 @@ const Signup: React.FC = () => {
                   password: e.target.value,
                 }))
               }}
-              className="min-h-[38px] block px-2 w-full text-base font-medium tracking-wide text-slate-800 bg-slate-200 rounded border border-slate-300 appearance-none ring-8 ring-transparent transition duration-200 focus:bg-slate-100 focus:ring-2 focus:border-slate-100 focus:ring-blue-500 focus:outline-none peer disabled:opacity-50"
+              className="min-h-[38px] block px-2 w-full text-base font-medium tracking-wide text-slate-800 bg-slate-200 rounded border border-slate-300 appearance-none ring-8 ring-transparent transition duration-200 focus:bg-slate-100 focus:ring-2 focus:border-slate-100 focus:ring--primary focus:outline-none peer disabled:opacity-50"
               placeholder=" " />
             <label htmlFor="password"
-              className="absolute select-none cursor-text text-sm text-slate-600 duration-200 transform -translate-y-8 scale-75 top-2 z-10 origin-[0] bg-transparent px-2 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-8 peer-focus:bg-transparent rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+              className="absolute select-none cursor-text text-sm text-slate-600 duration-200 transform -translate-y-8 scale-75 top-2 z-10 origin-[0] bg-transparent px-2 peer-focus:text--primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-8 peer-focus:bg-transparent rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
               Password
             </label>
           </div>
@@ -112,28 +111,28 @@ const Signup: React.FC = () => {
                   password_confirmation: e.target.value,
                 }))
               }}
-              className="min-h-[38px] block px-2 w-full text-base font-medium tracking-wide text-slate-800 bg-slate-200 rounded border border-slate-300 appearance-none ring-8 ring-transparent transition duration-200 focus:bg-slate-100 focus:ring-2 focus:border-slate-100 focus:ring-blue-500 focus:outline-none peer disabled:opacity-50"
+              className="min-h-[38px] block px-2 w-full text-base font-medium tracking-wide text-slate-800 bg-slate-200 rounded border border-slate-300 appearance-none ring-8 ring-transparent transition duration-200 focus:bg-slate-100 focus:ring-2 focus:border-slate-100 focus:ring--primary focus:outline-none peer disabled:opacity-50"
               placeholder=" " />
             <label htmlFor="confirm_password"
-              className="absolute select-none cursor-text text-sm text-slate-600 duration-200 transform -translate-y-8 scale-75 top-2 z-10 origin-[0] bg-transparent px-2 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-8 peer-focus:bg-transparent rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
+              className="absolute select-none cursor-text text-sm text-slate-600 duration-200 transform -translate-y-8 scale-75 top-2 z-10 origin-[0] bg-transparent px-2 peer-focus:text--primary peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-8 peer-focus:bg-transparent rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">
               Confirm Password
             </label>
           </div>
 
           {/* login button and link */}
           <div className='w-full relative flex flex-col gap-2'>
-            <button type="button"
-              className='w-full rounded ion-activatable ripple-parent p-2 text-base text-center bg-blue-600 text-gray-100 transition duration-200 active:bg-blue-700 disabled:opacity-50'>
-              <span>Sign Up</span>
-              <IonRippleEffect></IonRippleEffect>
-            </button>
-            <div className='w-full flex flex-row items-center justify-center gap-2 px-2'>
-              <IonRouterLink routerDirection="forward" href='/'>
-                <span className='text-sm font-medium text-blue-500'>
-                  Sign In
-                </span>
-              </IonRouterLink>
-            </div>
+            <IonRouterLink routerDirection='forward' routerLink='/user/profile'>
+              <button type="button"
+                className='w-full rounded ion-activatable ripple-parent p-2 text-base text-center bg-gradient-to-r from-secondary to-primary text-slate-100 transition duration-200 active:bg-blue-700 disabled:opacity-50'>
+                <span>Sign Up</span>
+                <IonRippleEffect></IonRippleEffect>
+              </button>
+            </IonRouterLink>
+            <IonRouterLink routerDirection='forward' routerLink='/login' className='text-sm text-center font-medium text--primary relative'>
+              <span className='relative block'>
+                Sign In
+              </span>
+            </IonRouterLink>
           </div>
         </form>
 

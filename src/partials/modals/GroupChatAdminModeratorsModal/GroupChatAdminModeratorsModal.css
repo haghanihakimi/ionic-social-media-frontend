@@ -1,0 +1,3 @@
+#group-chat-admin-moderators::part(content) {
+    @apply rounded-none bg-slate-50;
+}

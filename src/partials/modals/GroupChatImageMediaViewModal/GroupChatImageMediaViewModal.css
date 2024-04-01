@@ -1,0 +1,3 @@
+#group-chat-media-image-view::part(content) {
+    @apply rounded-none bg-slate-900;
+}

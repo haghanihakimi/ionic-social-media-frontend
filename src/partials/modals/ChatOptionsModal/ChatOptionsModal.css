@@ -1,0 +1,7 @@
+#chatOptionsModal {
+    --height: auto;
+}
+
+ion-modal::part(content) {
+    @apply rounded-tl-2xl rounded-tr-2xl
+}

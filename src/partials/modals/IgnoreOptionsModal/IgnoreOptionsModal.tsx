@@ -15,44 +15,42 @@ const IgnoreOptionsModal: React.FC = () => {
 
     return (
         <>
-            <IonModal ref={modal} isOpen={modals.ignoreOptionsModal} initialBreakpoint={1} breakpoints={[0, 1]}
+            <IonModal ref={modal} id='ignoreOptionsModal' isOpen={modals.ignoreOptionsModal} initialBreakpoint={1} breakpoints={[0, 1]}
                 onDidDismiss={() => dispatch(toggleIgnoreOptionsModal(false))}>
-                <IonHeader class='shadow-none border-b border-slate-100'>
-                    <IonToolbar class='shadow-none px-4 border-b border-slate-100 flex justify-center items-center'>
-                        <div className='w-full flex items-center'>
-                            <button className='w-8 h-8 shrink-0 flex justify-center items-center rounded'
-                                onClick={() => { dispatch(toggleIgnoreOptionsModal(false)); dispatch(toggleFollowingOptionsModal(true)); }}>
-                                <LeftIcon className='w-6 h-6 text-blue-600' />
-                            </button>
-                            <h4 className='block w-fit translate-x-16'>
-                                Ignore Options
-                            </h4>
-                        </div>
-                    </IonToolbar>
-                </IonHeader>
+                <IonToolbar class='shadow-none px-4 border-b border-slate-200 flex justify-center items-center'>
+                    <div className='w-full flex items-center'>
+                        <button className='w-8 h-8 shrink-0 flex justify-center items-center rounded'
+                            onClick={() => { dispatch(toggleIgnoreOptionsModal(false)); dispatch(toggleFollowingOptionsModal(true)); }}>
+                            <LeftIcon className='w-6 h-6 text-primary' />
+                        </button>
+                        <h4 className='block w-fit translate-x-16'>
+                            Ignore Options
+                        </h4>
+                    </div>
+                </IonToolbar>
                 <div className='w-full relative flex flex-col gap-0'>
-                    <label className="inline-flex p-4 ion-activatable ripple-parent outline-none justify-between items-center cursor-pointer">
+                    <label className="inline-flex p-4 text-secondary ion-activatable ripple-parent outline-none justify-between items-center cursor-pointer">
                         <input type="checkbox" value="Posts" name='posts' className="sr-only peer hidden invisible" />
-                        <span className="text-sm font-medium text-slate-900">
+                        <span className="text-sm font-medium text-slate-800">
                             Posts
                         </span>
-                        <div className="relative w-9 h-5 bg-gray-300 border border-slate-400 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-slate-400 after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:-start-[3px] after:bg-white after:border-gray-400 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        <div className="relative w-9 h-5 bg-gray-300 border border-slate-400 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-slate-400 after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:-start-[3px] after:bg-white after:border-gray-400 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-secondary peer-checked:to-primary"></div>
                         <IonRippleEffect></IonRippleEffect>
                     </label>
-                    <label className="inline-flex p-4 ion-activatable ripple-parent outline-none justify-between items-center cursor-pointer">
+                    <label className="inline-flex p-4 text-secondary ion-activatable ripple-parent outline-none justify-between items-center cursor-pointer">
                         <input type="checkbox" value="Stories" name='stories' className="sr-only peer hidden invisible" />
-                        <span className="text-sm font-medium text-slate-900">
+                        <span className="text-sm font-medium text-slate-800">
                             Stories
                         </span>
-                        <div className="relative w-9 h-5 bg-gray-300 border border-slate-400 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-slate-400 after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:-start-[3px] after:bg-white after:border-gray-400 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        <div className="relative w-9 h-5 bg-gray-300 border border-slate-400 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-slate-400 after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:-start-[3px] after:bg-white after:border-gray-400 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-secondary peer-checked:to-primary"></div>
                         <IonRippleEffect></IonRippleEffect>
                     </label>
-                    <label className="inline-flex p-4 ion-activatable ripple-parent outline-none justify-between items-center cursor-pointer">
+                    <label className="inline-flex p-4 text-secondary ion-activatable ripple-parent outline-none justify-between items-center cursor-pointer">
                         <input type="checkbox" value="Messages" name='messages' className="sr-only peer hidden invisible" />
-                        <span className="text-sm font-medium text-slate-900">
+                        <span className="text-sm font-medium text-slate-800">
                             Messages
                         </span>
-                        <div className="relative w-9 h-5 bg-gray-300 border border-slate-400 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-slate-400 after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:-start-[3px] after:bg-white after:border-gray-400 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        <div className="relative w-9 h-5 bg-gray-300 border border-slate-400 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-slate-400 after:content-[''] after:absolute after:top-0 after:bottom-0 after:my-auto after:-start-[3px] after:bg-white after:border-gray-400 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gradient-to-r peer-checked:from-secondary peer-checked:to-primary"></div>
                         <IonRippleEffect></IonRippleEffect>
                     </label>
                 </div>

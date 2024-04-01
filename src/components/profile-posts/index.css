@@ -1,0 +1,12 @@
+#profile-posts .swiper {
+    height: fit-content !important;
+}
+
+#profile-posts .swiper-slide {
+    height: fit-content !important;
+    text-align: center;
+}
+
+#profile-posts .swiper-content {
+    height: 100% !important
+}

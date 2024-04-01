@@ -1,0 +1,20 @@
+#chatAttachmentsModal {
+    --height: auto;
+    @apply flex justify-end items-end max-w-xs;
+}
+#chatAttachmentsModal::part(handle){
+    display: none !important;
+    opacity: 0;
+    visibility: hidden;
+}
+#chatAttachmentsModal::part(content) {
+    @apply rounded-2xl p-0 block relative mb-12 bg-transparent;
+}
+#chatAttachmentsModal::part(backdrop) {
+    background-color: transparent;
+}
+#chatAttachmentsModal .ion-delegate-host {
+    background-color: white;
+    position: relative;
+    @apply ml-4 rounded-tr-2xl rounded-br-2xl rounded-tl-2xl rounded-bl shadow-lg p-0 border border-slate-300;
+}

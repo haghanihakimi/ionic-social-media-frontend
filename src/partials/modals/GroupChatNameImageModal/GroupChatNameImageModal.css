@@ -1,0 +1,3 @@
+#group-chat-name-image::part(content) {
+    @apply rounded-none bg-slate-50;
+}

@@ -1,11 +1,23 @@
-import React from 'react';
-import { IonNav } from '@ionic/react';
+import React, { useEffect } from 'react';
 import LoginLayout from '../../layouts/login/Login';
+import { useDispatch } from 'react-redux';
+import { setRoute } from '../../server/store/reducers/route';
+import { useLocation } from 'react-router';
 
 
 const Login: React.FC = () => {
+  const dispatch = useDispatch();
+  const location = useLocation();
 
-  return <IonNav root={() => <LoginLayout />}></IonNav>;
+  useEffect(() => {
+    dispatch(setRoute(location.pathname))
+  }, [location.pathname])
+
+  return (
+    <>
+      <LoginLayout />
+    </>
+  );
 };
 
 export default Login;

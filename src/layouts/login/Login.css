@@ -5,3 +5,15 @@
     --background: transparent;
     --box-shadow: none;
 }
+
+ion-button#loginForgotPasswordBtn, ion-button#loginCreateAccountBtn {
+    background-color: transparent !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    width: 100% !important;
+    --height: 4px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    --border-radius: 0 !important;
+    z-index: 1;
+}

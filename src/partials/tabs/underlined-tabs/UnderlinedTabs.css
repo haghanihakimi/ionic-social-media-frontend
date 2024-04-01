@@ -1,0 +1,12 @@
+#underlined-tabs .swiper {
+    height: fit-content !important;
+}
+
+#underlined-tabs .swiper-slide {
+    height: fit-content !important;
+    text-align: center;
+}
+
+#underlined-tabs .swiper-content {
+    height: 100% !important
+}

@@ -1,0 +1,3 @@
+#notifications-modal::part(content) {
+    @apply rounded-none bg-slate-50;
+}

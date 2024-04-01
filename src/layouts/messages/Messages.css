@@ -1,0 +1,11 @@
+#messages-swiper-slides .swiper {
+    height: fit-content !important;
+}
+
+#messages-swiper-slides .swiper-slide {
+    height: fit-content !important;
+}
+
+#messages-swiper-slides .swiper-content {
+    height: 100% !important
+}
