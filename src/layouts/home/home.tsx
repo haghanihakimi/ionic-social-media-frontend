@@ -1,8 +1,7 @@
 import React from 'react';
-import { IonPage, IonContent, IonHeader, IonToolbar, IonRippleEffect, IonRouterLink, useIonRouter } from '@ionic/react';
+import { IonPage, IonToolbar, useIonRouter } from '@ionic/react';
 import {
-    HiOutlineHome as HomeIconOutline, HiOutlineBell as BellIconOutline,
-    HiMiniHome as HomeIconFilled, HiBell as BellIconFilled,
+    HiOutlineBell as BellIconOutline, HiBell as BellIconFilled,
 } from "react-icons/hi2";
 import { letterizeNumbers } from '../../server/plugins';
 import ProfileImagePartial from '../../partials/profile-image/ProfileImage';

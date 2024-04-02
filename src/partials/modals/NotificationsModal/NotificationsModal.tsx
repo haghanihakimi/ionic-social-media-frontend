@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { IonToolbar, IonModal, IonHeader, IonRippleEffect } from '@ionic/react';
+import { IonModal, IonHeader, IonRippleEffect } from '@ionic/react';
 import {
-    HiMiniChevronLeft as LeftIcon
+    HiMiniChevronLeft as LeftIcon, HiOutlineInformationCircle as InfoIcon,
+    HiXMark as CrossIcon,
 } from "react-icons/hi2";
 import './NotificationsModal.css';
 import { RootState } from '../../../server/store';
@@ -31,8 +32,50 @@ const NotificationsModal: React.FC = () => {
                             </span>
                         </div>
                     </IonHeader>
-                    <div className='w-full my-auto relative flex flex-col gap-0'>
-                        {/*  */}
+
+                    <div className='w-full relative flex flex-col gap-0'>
+                        
+                        {/* user notification */}
+                        <div className='w-full flex flex-row items-center justify-between py-2 px-4'>
+                            {/* name & title */}
+                            <div className='w-auto relative flex flex-row items-center gap-2'>
+                                {/* image */}
+                                <div className='w-7 h-7 rounded-full'>
+                                    <img src='https://images.unsplash.com/photo-1531853749260-4447dc77f7e8'
+                                        className='w-6 h-6 rounded-full object-cover' />
+                                </div>
+                                {/* title */}
+                                <span className='text-sm text-slate-800'>
+                                    <strong>sara_miller</strong> sent you follow request
+                                </span>
+                            </div>
+                            {/* buttons */}
+                            <div className='w-fit flex flex-row items-center justify-between gap-1'>
+                                <button className='bg-gradient-to-r from-secondary to-primary text-sm p-1 text-slate-200 rounded-lg'>
+                                    Confirm
+                                </button>
+                                <button className='bg-gradient-to-r text-sm p-1 bg-slate-300 rounded-lg'>
+                                    <CrossIcon className='w-5 h-5 text-slate-700' />
+                                </button>
+                            </div>
+                        </div>
+                        {/* info notification */}
+                        <div className='w-full flex flex-row items-center justify-between py-2 px-4'>
+                            {/* name & title */}
+                            <div className='w-auto relative flex flex-row items-center gap-2'>
+                                {/* image */}
+                                <div className='w-7 h-7 rounded-full'>
+                                    <InfoIcon className='w-6 h-6 text-slate-600' />
+                                </div>
+                                {/* title */}
+                                <span className='text-sm text-slate-800'>
+                                    Your report outcome from March 01
+                                </span>
+                            </div>
+                        </div>
+                        {/* <h3 className='w-full text-center p-4 text-slate-500 mt-0 relative'>
+                            You have no notifications
+                        </h3> */}
                     </div>
                 </div>
             </IonModal>
