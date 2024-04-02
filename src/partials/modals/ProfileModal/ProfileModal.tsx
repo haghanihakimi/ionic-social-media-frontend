@@ -5,6 +5,7 @@ import {
     HiMiniChevronRight as RightIcon, HiOutlineCog6Tooth as SettingsIcon,
     HiOutlineHeart as HeartIcon, HiOutlineCalendarDays as CalendarIcon,
     HiOutlineUserGroup as GroupsIcon, HiNoSymbol as BlockIcon,
+    HiArrowRightOnRectangle as SignoutIcon,
 } from "react-icons/hi2";
 import './ProfileModal.css';
 import { RootState } from '../../../server/store';
@@ -72,6 +73,16 @@ const ProfileModal: React.FC = () => {
                                 Favorites
                             </span>
                             <RightIcon className='w-5 h-5 text-slate-500' />
+                            <IonRippleEffect></IonRippleEffect>
+                        </button>
+                    </IonRouterLink>
+                    <IonRouterLink routerDirection='forward' routerLink='/login' className='border-b border-slate-100 last:border-none'>
+                        <button onClickCapture={() => dispatch(toggleProfileModal(false))}
+                            className='w-full ion-activatable ripple-parent outline-none flex justify-between items-center text-secondary text-left text-sm px-4 py-3'>
+                            <span className='inline-flex flex row items-center gap-2 text-slate-800'>
+                                <SignoutIcon className='w-5 h-5 text-slate-500' />
+                                Sign Out
+                            </span>
                             <IonRippleEffect></IonRippleEffect>
                         </button>
                     </IonRouterLink>
